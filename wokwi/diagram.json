@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "AquaGiant Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "ph",
+      "top": 411.5,
+      "left": 393.4,
+      "attrs": { "value": "2107" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "do",
+      "top": 325.1,
+      "left": 393.4,
+      "attrs": { "value": "1707" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "temp",
+      "top": 229.1,
+      "left": 393.4,
+      "attrs": { "value": "2500" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay", "top": 29, "left": 585.6, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 249.6,
+      "left": 489.6,
+      "attrs": { "text": "Sensor suhu" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 355.2,
+      "left": 499.2,
+      "attrs": { "text": "Sensor DO" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": 441.6,
+      "left": 499.2,
+      "attrs": { "text": "Sensor pH" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "ph:VCC", "red", [ "h340.99", "v451.2" ] ],
+    [ "esp:GND.1", "ph:GND", "black", [ "h321.79", "v326.4" ] ],
+    [ "esp:34", "ph:SIG", "blue", [ "h331.39", "v412.8" ] ],
+    [ "esp:3V3", "do:VCC", "red", [ "h273.79", "v316.8" ] ],
+    [ "esp:GND.1", "do:GND", "black", [ "h254.59", "v192" ] ],
+    [ "esp:35", "do:SIG", "orange", [ "h264.19", "v268.8" ] ],
+    [ "esp:3V3", "temp:VCC", "red", [ "h388.99", "v268.8" ] ],
+    [ "esp:GND.1", "temp:GND", "black", [ "h369.79", "v144" ] ],
+    [ "esp:32", "temp:SIG", "green", [ "h379.39", "v211.2" ] ],
+    [ "esp:3V3", "relay:VCC", "red", [ "v19.2", "h580.99" ] ],
+    [ "esp:GND.1", "relay:GND", "black", [ "v-96", "h580.99" ] ],
+    [ "esp:26", "relay:IN", "green", [ "v-48", "h580.99" ] ]
+  ],
+  "dependencies": {}
+}
